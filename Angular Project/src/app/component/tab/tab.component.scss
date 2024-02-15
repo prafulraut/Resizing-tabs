@@ -1,0 +1,71 @@
+.tabs-container {
+  .nav-tabs {
+    background-color: grey;
+    height: 55px;
+    width: 100%;
+  }
+
+  .title-color {
+    color: black;
+  }
+
+  .add-tab {
+    margin-top: 18px;
+    margin-left: 10px;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .history-tab {
+    margin: 0 auto;
+    margin-top: 18px;
+    margin-right: 10px;
+    float: right;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .edit-icon {
+    margin-top: 12px !important;
+    margin-left: 12px;
+   
+  }
+
+  .nav-link:hover {
+    background-color: #f0eeee !important;
+    margin: 5px;
+  }
+
+  .nav-tabs {
+    li {
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 250px;
+    }
+
+    .tabs-width {
+      width: 250px !important;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+    }
+
+    .close-icon {
+      margin-left: 10px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .active .nav-link {
+      background-color: #f0f0f0;
+    }
+  }
+}
+

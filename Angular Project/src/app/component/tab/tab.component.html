@@ -1,0 +1,33 @@
+<div class="tabs-container">
+  <ul class="nav nav-tabs">
+    <li class="nav-item" *ngFor="let tab of tabs; let i = index " [class.active]="i  === activeTabIndex"
+      [ngClass]="tabs.length == 1 ? 'tabs-width' : '' ">
+      <a class="nav-link title-color mt-1" (click)="activateTab(i)">{{ tab.newTabTitle | truncatePipe }} <span
+          class="close-icon" (click)="closeTab(tab.id)">&times;</span></a>
+    </li>
+    <li class="nav-item add-tab">
+      <a (click)="openAddEditDialog('add')">
+        <fa-icon [icon]="plusIcon"></fa-icon>
+      </a>
+    </li>
+    <div class="history-tab">
+      <a data-toggle="modal" (click)="openHistoryDialog()">
+        <fa-icon [icon]="downIcon"></fa-icon>
+      </a>
+    </div>
+  </ul>
+  <div class="tab-content">
+    <ng-container *ngFor="let tab of tabs; let i = index ">
+      <div class="tab-pane active " [class.active]="i === activeTabIndex">
+        <div class="d-flex justify-content-center mt-4">
+          <h1>
+            {{ tab.newTabTitle }}
+          </h1>
+          <span class="edit-icon" (click)="openAddEditDialog('edit',tab.id,tab.newTabTitle)">
+            <fa-icon [icon]="editIcon"></fa-icon>
+          </span>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

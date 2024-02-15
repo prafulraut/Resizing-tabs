@@ -1,0 +1,33 @@
+.modal-dialog {
+  position: fixed;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  right: 0px;
+}
+
+.modal-body {
+  overflow-y: auto;
+  max-height: 800px;
+}
+
+.nav-item {
+  display: block;
+  width: 100%;
+}
+
+.close-icon {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.model-close-icon {
+  color: black;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.close {
+  text-decoration: none;
+}

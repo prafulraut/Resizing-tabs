@@ -1,0 +1,24 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 *ngIf="mode == 'add'" class="modal-title" id="addTabModalLabel">Add Tab</h5>
+        <h5 *ngIf="mode == 'edit'" class="modal-title" id="addTabModalLabel">Edit Tab</h5>
+        <a class="close">
+            <span class="close-icon" (click)="closeModel()">&times;</span>
+        </a>
+    </div>
+    <form [formGroup]="tabForm" (ngSubmit)="addTab()">
+        <div class="modal-body">
+            <div>
+                <input type="text" class="form-control" formControlName="newTabTitle" name="newTabTitle"
+                    placeholder="Enter New Tab Title">
+                <div class="text-danger m-2"
+                    *ngIf="tabForm.get('newTabTitle')?.hasError('required') && tabForm.get('newTabTitle')?.touched ">
+                    Tab name is required</div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" data-dismiss="modal" [disabled]="!tabForm.valid">Save</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModel()">Cancel</button>
+        </div>
+    </form>
+</div>
